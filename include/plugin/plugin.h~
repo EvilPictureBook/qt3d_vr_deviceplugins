@@ -1,0 +1,4 @@
+#include <stdio.h>
+
+int plugin_fnc();
+void plugin_test2(int i);
