@@ -6,11 +6,12 @@ int main(){
 
     printf("main\n");
 
-    PluginImplementation plug;
+    TestVRDeviceImplementation plug;
 
     plug.initializeVR();
     plug.update();
-    plug.submitVR();
+    plug.submitVR(0,1);
+    plug.shutdownVR();
 
     return 0;
 }

@@ -1,16 +1,25 @@
+#ifndef TEST_VRDEVICE_IMPLEMENTATION_H
+#define TEST_VRDEVICE_IMPLEMENTATION_H
+
 #include <plugin/IPlugin.h>
 
-class PluginImplementation : public IPlugin
+class TestVRDeviceImplementation : public IVRDeviceImplementation
 {
 public:
-    PluginImplementation();
-    ~PluginImplementation();
+    TestVRDeviceImplementation ();
+    ~TestVRDeviceImplementation ();
 
     int initializeVR(void* udata=nullptr);
-    int submitVR(void* udata=nullptr);
+    int submitVR(uintmax_t leftEyeTexID, uintmax_t rightEyeTexID, void* udata = nullptr);
     int update(void* udata=nullptr);
+    int shutdownVR(void* udata = nullptr);
 
 };
 
-//extern "C" IPlugin * create_plugin(){return new PluginImplementation;}
-//extern "C" void destroy_plugin(IPlugin *p){ delete p;}
+
+struct export_stuff{
+    IVRDeviceImplementation* (*create_vrd)(void);
+    void (*destroy_vrd)(IVRDeviceImplementation *p);
+};
+
+#endif
