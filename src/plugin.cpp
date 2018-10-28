@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <plugin/plugin.h>
+#include <VRDeviceImplementation/plugin.h>
 
 //need to call this in the implementation
 VRDEVICE_PLUGIN(TestVRDeviceImplementation);

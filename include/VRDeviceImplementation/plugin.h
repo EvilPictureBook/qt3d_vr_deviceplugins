@@ -1,7 +1,7 @@
 #ifndef TEST_VRDEVICE_IMPLEMENTATION_H
 #define TEST_VRDEVICE_IMPLEMENTATION_H
 
-#include <plugin/IPlugin.h>
+#include <VRDeviceImplementation/IVRDeviceImplementation.h>
 
 class TestVRDeviceImplementation : public IVRDeviceImplementation
 {
