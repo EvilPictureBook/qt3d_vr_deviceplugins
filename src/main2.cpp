@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <VRDeviceImplementation/IVRDeviceImplementation.h>
-#include <VRDeviceImplementation/IVRPluginInfo.h>
+#include <VRDeviceImplementation/VRPluginInfo.h>
 #include <iostream>
 #include <dlfcn.h>
 
@@ -8,7 +8,7 @@ int main(){
 
     printf("naim\n");
 
-    IVRPluginInfo pluginInfo("./libmy_plugin.so");
+    VRPluginInfo pluginInfo("./libmy_plugin.so");
     //IVRPluginInfo pluginInfo("../bin/libmy_plugin.so");
     pluginInfo.loadLib();
 

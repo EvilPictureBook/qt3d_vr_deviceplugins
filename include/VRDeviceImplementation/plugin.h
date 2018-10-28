@@ -13,6 +13,7 @@ public:
     int submitVR(uintmax_t leftEyeTexID, uintmax_t rightEyeTexID, void* udata = nullptr);
     int update(void* udata=nullptr);
     int shutdownVR(void* udata = nullptr);
+    int shouldClose();
 
 };
 

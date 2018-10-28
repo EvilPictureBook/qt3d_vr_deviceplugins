@@ -23,6 +23,7 @@ public:
     virtual int submitVR(uintmax_t leftEyeTexID, uintmax_t rightEyeTexID, void* udata = nullptr) = 0;
     virtual int update(void* udata = nullptr) = 0;
     virtual int shutdownVR(void* udata = nullptr) = 0;
+    virtual int shouldClose() = 0;
 
 };
 

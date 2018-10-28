@@ -31,3 +31,8 @@ int TestVRDeviceImplementation::shutdownVR(void* udata){
     return 0;
 }
 
+
+int TestVRDeviceImplementation::shouldClose(){
+    return false;
+}
+
