@@ -36,14 +36,17 @@ struct IVRPluginInfo{
     get_vr_interface_version_t* get_vr_interface_version;
     create_vrdevice_t* create_vrdevice;
     destroy_vrdevice_t* destroy_vrdevice;
+
+    //int findSymbols();
+    //int loadLib();
 };
 
 
 // small macro to make sure the user doesn't have to do too much
 // maybe do this with a struct ???
 #define VRDEVICE_PLUGIN(typename)                                               \
-    extern "C" IVRDeviceImplementation* create_plugin(){return new typename;}   \
-    extern "C" void destroy_plugin(IVRDeviceImplementation *p){ delete p;}      \
+    extern "C" IVRDeviceImplementation* create_vrdevice(){return new typename;}   \
+    extern "C" void destroy_vrdevice(IVRDeviceImplementation *p){ delete p;}      \
     extern "C" int get_vr_interface_version(){return I_VRDEVICE_API_VERSION;}
 
 #endif

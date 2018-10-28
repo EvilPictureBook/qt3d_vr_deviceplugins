@@ -18,13 +18,13 @@ int find_symbols(IVRPluginInfo* info){
         exit(1);
         return 1;
     }
-    printf("found create symbol\n");
+    printf("VRPluginInfo found version symbol\n");
 
     //check version
-    printf("VR Interface Version: %d\n", info->get_vr_interface_version());
+    printf("VRPluginInfo ::: VR Interface Version: %d\n", info->get_vr_interface_version());
 
     dlerror(); // reset errors
-    info->create_vrdevice = (create_vrdevice_t*) dlsym(info->handle, "create_plugin");
+    info->create_vrdevice = (create_vrdevice_t*) dlsym(info->handle, "create_vrdevice");
     dlsym_error = dlerror();
     if (dlsym_error) {
         printf("Cannot load symbol 'create_plugin()': %s \n",dlsym_error);
@@ -32,9 +32,9 @@ int find_symbols(IVRPluginInfo* info){
         exit(1);
         return 1;
     }
-    printf("found create symbol\n");
+    printf("VRPluginInfo found create symbol\n");
 
-    info->destroy_vrdevice = (destroy_vrdevice_t*) dlsym(info->handle, "destroy_plugin");
+    info->destroy_vrdevice = (destroy_vrdevice_t*) dlsym(info->handle, "destroy_vrdevice");
     dlsym_error = dlerror();
     if (dlsym_error) {
         printf("Cannot load symbol 'create_plugin()': %s \n",dlsym_error);
@@ -42,7 +42,7 @@ int find_symbols(IVRPluginInfo* info){
         exit(1);
         return 1;
     }
-    printf("found destroy symbol\n");
+    printf("VRPluginInfo found destroy symbol\n");
 
     return 0;
 }
@@ -54,9 +54,7 @@ int openLib(const char* location, IVRPluginInfo* info){
         exit(1);
         return 1;
     }
-    printf("opened lib\n");
-
-    find_symbols(info);
+    printf("VRPluginInfo opened lib\n");
 
     return 0;
 }
@@ -67,6 +65,7 @@ int main(){
 
     IVRPluginInfo pluginInfo;
     openLib("./libmy_plugin.so",&pluginInfo);
+    find_symbols(&pluginInfo);
 
     IVRDeviceImplementation* plug = pluginInfo.create_vrdevice();
 

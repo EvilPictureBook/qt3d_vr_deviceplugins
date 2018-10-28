@@ -8,7 +8,7 @@ TestVRDeviceImplementation::TestVRDeviceImplementation(){
     printf("VR Constructor\n");
 }
 TestVRDeviceImplementation::~TestVRDeviceImplementation(){
-    printf("VR Destructor");
+    printf("VR Destructor\n");
 }
 
 int TestVRDeviceImplementation::initializeVR(void* udata){
