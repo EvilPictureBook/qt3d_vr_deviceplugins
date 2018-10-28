@@ -31,8 +31,3 @@ int TestVRDeviceImplementation::shutdownVR(void* udata){
     return 0;
 }
 
-//extern "C" IVRDeviceImplementation* create_plugin(){return new TestVRDeviceImplementation ;}
-//extern "C" void destroy_plugin(IVRDeviceImplementation *p){ delete p;}
-//extern "C" int get_vr_interface_version(){return I_VRDEVICE_API_VERSION;}
-
-

@@ -16,10 +16,4 @@ public:
 
 };
 
-
-struct export_stuff{
-    IVRDeviceImplementation* (*create_vrd)(void);
-    void (*destroy_vrd)(IVRDeviceImplementation *p);
-};
-
 #endif
