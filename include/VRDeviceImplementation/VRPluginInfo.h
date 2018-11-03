@@ -9,11 +9,13 @@ namespace Plugin {
 class VRPluginInfo{
 public:
 
-    VRPluginInfo(const char* location): location(location){ };
+    //VRPluginInfo(const char* location): location(location){ };
+    VRPluginInfo() { };
     ~VRPluginInfo() { };
 
     //int findSymbols();
-    int loadLib();
+    int loadLib(const char* loc);
+    int unloadLib();
 
     void* handle;
     const char* location;

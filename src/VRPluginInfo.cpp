@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-int VR::Plugin::VRPluginInfo::loadLib(){
+int VR::Plugin::VRPluginInfo::loadLib(const char* loc){
 
     ready = false;
 
     //handle = dlopen(location, RTLD_LAZY); //TODO: check flag
-    handle = dlopen(location, RTLD_NOW); //TODO: check flag
+    handle = dlopen(loc, RTLD_NOW); //TODO: check flag
     if (!handle) {
         printf("Cannot open lib: %s \n", dlerror());
         ready = false;
@@ -50,7 +50,13 @@ int VR::Plugin::VRPluginInfo::loadLib(){
     }
     printf("VRPluginInfo found destroy symbol\n");
 
-    printf("[SUCCESS] Library loaded, and all symbols found\n");
+    printf("[SUCCESS]\n[%s]\nLibrary loaded, and all symbols found\n",loc);
     ready=true;
+    return 0;
+}
+
+int VR::Plugin::VRPluginInfo::unloadLib(){
+    printf("VRPluginInfo closing handle\n");
+    dlclose(handle);
     return 0;
 }
