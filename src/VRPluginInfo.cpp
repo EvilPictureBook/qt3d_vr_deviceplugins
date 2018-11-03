@@ -1,9 +1,8 @@
-#include <VRDeviceImplementation/IVRPluginInfo.h>
+#include <VRDeviceImplementation/VRPluginInfo.h>
 #include <stdio.h>
 #include <dlfcn.h>
 
-
-int VR::Plugin::IVRPluginInfo::loadLib(){
+int VR::Plugin::VRPluginInfo::loadLib(){
 
     ready = false;
 

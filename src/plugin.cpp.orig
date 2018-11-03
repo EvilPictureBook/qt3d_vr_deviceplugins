@@ -30,9 +30,12 @@ int TestVRDeviceImplementation::shutdownVR(void* udata){
     printf("VR Shutdown\n");
     return 0;
 }
+<<<<<<< HEAD
+=======
 
 
 int TestVRDeviceImplementation::shouldClose(){
     return false;
 }
 
+>>>>>>> 512e8eac2c453e384538403fff31db4b2b86c5ba

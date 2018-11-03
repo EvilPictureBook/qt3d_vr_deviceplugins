@@ -1,16 +1,16 @@
-#ifndef IVR_PLUGIN_INFO_H
-#define IVR_PLUGIN_INFO_H
+#ifndef VR_PLUGIN_INFO_H
+#define VR_PLUGIN_INFO_H
 
 #include <VRDeviceImplementation/IVRDeviceImplementation.h> //need the type defs
 
 namespace VR {
 namespace Plugin {
 
-class IVRPluginInfo{
+class VRPluginInfo{
 public:
 
-    IVRPluginInfo(const char* location): location(location){ };
-    ~IVRPluginInfo() { };
+    VRPluginInfo(const char* location): location(location){ };
+    ~VRPluginInfo() { };
 
     //int findSymbols();
     int loadLib();
