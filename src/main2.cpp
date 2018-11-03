@@ -8,11 +8,11 @@ int main(){
 
     printf("naim\n");
 
-    IVRPluginInfo pluginInfo("./libmy_plugin.so");
+    VR::Plugin::IVRPluginInfo pluginInfo("./libmy_plugin.so");
     //IVRPluginInfo pluginInfo("../bin/libmy_plugin.so");
     pluginInfo.loadLib();
 
-    IVRDeviceImplementation* plug = pluginInfo.createVRDevice();
+    VR::Plugin::IVRDeviceImplementation* plug = pluginInfo.createVRDevice();
 
     plug->initializeVR();
     plug->update();

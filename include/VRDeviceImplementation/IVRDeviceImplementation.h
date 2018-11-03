@@ -12,6 +12,9 @@
 
 #include <cstdint> //don't really want to have this here either...but w/e
 
+namespace VR {
+namespace Plugin {
+
 class IVRDeviceImplementation
 {
 public:
@@ -35,8 +38,11 @@ typedef int get_vr_interface_version_t();
 // small macro to make sure the user doesn't have to do too much
 // maybe do this with a struct ???
 #define VRDEVICE_PLUGIN(typename)                                               \
-    extern "C" IVRDeviceImplementation* create_vrdevice(){return new typename;} \
-    extern "C" void destroy_vrdevice(IVRDeviceImplementation *p){ delete p;}    \
+    extern "C" VR::Plugin::IVRDeviceImplementation* create_vrdevice(){return new typename;} \
+    extern "C" void destroy_vrdevice(VR::Plugin::IVRDeviceImplementation *p){ delete p;}    \
     extern "C" int get_vr_interface_version(){return I_VRDEVICE_API_VERSION;}
+
+} // namespace VR
+} //namespace Plugin
 
 #endif

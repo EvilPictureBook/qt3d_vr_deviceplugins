@@ -3,6 +3,9 @@
 
 #include <VRDeviceImplementation/IVRDeviceImplementation.h> //need the type defs
 
+namespace VR {
+namespace Plugin {
+
 class IVRPluginInfo{
 public:
 
@@ -20,5 +23,9 @@ public:
     bool ready = false;
 
 };
+
+
+} // namespace VR
+} // namespace Plugin
 
 #endif

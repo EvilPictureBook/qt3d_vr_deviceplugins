@@ -30,4 +30,3 @@ int TestVRDeviceImplementation::shutdownVR(void* udata){
     printf("VR Shutdown\n");
     return 0;
 }
-

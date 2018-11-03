@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-int IVRPluginInfo::loadLib(){
+
+int VR::Plugin::IVRPluginInfo::loadLib(){
 
     ready = false;
 
