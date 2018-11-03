@@ -1,7 +1,7 @@
 #ifndef I_VRDEVICE_IMPLEMENTATION_H
 #define I_VRDEVICE_IMPLEMENTATION_H
 
-#define I_VRDEVICE_API_VERSION 7
+#define I_VRDEVICE_API_VERSION 1
 
 // probably need this, and this is probably correct...
 //#ifdef WIN32
