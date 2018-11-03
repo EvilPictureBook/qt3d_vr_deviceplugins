@@ -3,7 +3,7 @@
 
 #include <VRDeviceImplementation/IVRDeviceImplementation.h>
 
-class TestVRDeviceImplementation : public IVRDeviceImplementation
+class TestVRDeviceImplementation : public VR::Plugin::IVRDeviceImplementation
 {
 public:
     TestVRDeviceImplementation ();

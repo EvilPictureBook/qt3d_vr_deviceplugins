@@ -2,7 +2,12 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-int VR::Plugin::VRPluginInfo::loadLib(){
+<<<<<<< HEAD:src/IVRPluginInfo.cpp
+
+int VR::Plugin::IVRPluginInfo::loadLib(){
+=======
+int VRPluginInfo::loadLib(){
+>>>>>>> 512e8eac2c453e384538403fff31db4b2b86c5ba:src/VRPluginInfo.cpp
 
     ready = false;
 

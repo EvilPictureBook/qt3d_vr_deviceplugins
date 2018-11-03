@@ -8,7 +8,11 @@ int main(){
 
     printf("naim\n");
 
-    VR::Plugin::VRPluginInfo pluginInfo("./libmy_plugin.so");
+<<<<<<< HEAD
+    VR::Plugin::IVRPluginInfo pluginInfo("./libmy_plugin.so");
+=======
+    VRPluginInfo pluginInfo("./libmy_plugin.so");
+>>>>>>> 512e8eac2c453e384538403fff31db4b2b86c5ba
     //IVRPluginInfo pluginInfo("../bin/libmy_plugin.so");
     pluginInfo.loadLib();
 

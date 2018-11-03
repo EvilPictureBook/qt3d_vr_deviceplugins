@@ -3,10 +3,14 @@
 
 #include <VRDeviceImplementation/IVRDeviceImplementation.h> //need the type defs
 
+<<<<<<< HEAD:include/VRDeviceImplementation/IVRPluginInfo.h
 namespace VR {
 namespace Plugin {
 
+class IVRPluginInfo{
+=======
 class VRPluginInfo{
+>>>>>>> 512e8eac2c453e384538403fff31db4b2b86c5ba:include/VRDeviceImplementation/VRPluginInfo.h
 public:
 
     VRPluginInfo(const char* location): location(location){ };
