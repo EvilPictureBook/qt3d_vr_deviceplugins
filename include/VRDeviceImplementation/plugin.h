@@ -2,7 +2,8 @@
 #define TEST_VRDEVICE_IMPLEMENTATION_H
 
 #include <VRDeviceImplementation/IVRDeviceImplementation.h>
-#include <VRDeviceImplementation/VRPluginTypes.h>
+//#include <VRDeviceImplementation/VRPluginTypes.h>
+#include <QtGui/QMatrix4x4>
 
 class TestVRDeviceImplementation : public VR::Plugin::IVRDeviceImplementation
 {
@@ -17,14 +18,14 @@ public:
     int shouldClose();
 
     //need to get left and right eye matrices
-    virtual VR::mat44_t getEyeProjection(VR::eyeId eye);
+    virtual QMatrix4x4 getEyeProjection(VR::eyeId eye);
 
     //need to get hmd pose, left eye pose, right eye pose
-    virtual VR::mat44_t getEyePose(VR::eyeId eye);
-    virtual VR::mat44_t getHmdPose();
+    virtual QMatrix4x4 getEyePose(VR::eyeId eye);
+    virtual QMatrix4x4 getHmdPose();
 
 private:
-    VR::mat44_t mat;
+    QMatrix4x4 mat;
 
 };
 

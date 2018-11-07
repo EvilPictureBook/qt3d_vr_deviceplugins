@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <VRDeviceImplementation/plugin.h>
-#include <VRDeviceImplementation/VRPluginTypes.h>
+//#include <VRDeviceImplementation/VRPluginTypes.h>
 
 //need to call this in the implementation
 VRDEVICE_PLUGIN(TestVRDeviceImplementation);
@@ -37,17 +37,17 @@ int TestVRDeviceImplementation::shouldClose(){
     return false;
 }
 
-VR::mat44_t TestVRDeviceImplementation::getEyeProjection(VR::eyeId eye){
+QMatrix4x4 TestVRDeviceImplementation::getEyeProjection(VR::eyeId eye){
     printf("VR getting projecton for eye: %d\n",eye);
     return mat;
 }
 
-VR::mat44_t TestVRDeviceImplementation::getEyePose(VR::eyeId eye){
+QMatrix4x4 TestVRDeviceImplementation::getEyePose(VR::eyeId eye){
     printf("VR getting pose for eye: %d\n",eye);
     return mat;
 }
 
-VR::mat44_t TestVRDeviceImplementation::getHmdPose(){
+QMatrix4x4 TestVRDeviceImplementation::getHmdPose(){
     printf("VR getting pose for HMD\n");
     return mat;
 }

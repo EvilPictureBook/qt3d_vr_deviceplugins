@@ -11,9 +11,16 @@
 //#endif
 
 #include <cstdint> //don't really want to have this here either...but w/e
-#include <VRDeviceImplementation/VRPluginTypes.h>
+#include <QtGui/QMatrix4x4>
+//#include <VRDeviceImplementation/VRPluginTypes.h>
 
 namespace VR {
+
+enum eyeId{
+    eyeLeft = 0,
+    eyeRight = 1
+};
+
 namespace Plugin {
 
 class IVRDeviceImplementation
@@ -30,13 +37,11 @@ public:
     virtual int shouldClose() = 0;
 
     //need to get left and right eye matrices
-    virtual mat44_t getEyeProjection(eyeId eye)=0;
-    virtual mat44_t getEyePose(eyeId eye)=0;
-    virtual mat44_t getHmdPose()=0;
+    virtual QMatrix4x4 getEyeProjection(eyeId eye)=0;
+    virtual QMatrix4x4 getEyePose(eyeId eye)=0;
+    virtual QMatrix4x4 getHmdPose()=0;
 
     //TODO: add hand pose and button states, etc...
-
-    
 
 };
 

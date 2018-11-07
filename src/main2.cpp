@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <VRDeviceImplementation/IVRDeviceImplementation.h>
 #include <VRDeviceImplementation/VRPluginInfo.h>
-#include <VRDeviceImplementation/VRPluginTypes.h>
+//#include <VRDeviceImplementation/VRPluginTypes.h>
+#include <QtGui/QMatrix4x4>
+
 //#include <iostream>
 //#include <dlfcn.h>
 
@@ -18,7 +20,7 @@ int main(){
     VR::Plugin::IVRDeviceImplementation* plug = pluginInfo.createVRDevice();
 
 
-    VR::mat44_t m;
+    QMatrix4x4 m;
 
     plug->initializeVR();
     plug->updateVR();
@@ -26,14 +28,14 @@ int main(){
     plug->getEyeProjection(VR::eyeRight);
     plug->getEyePose(VR::eyeLeft);
     plug->getEyePose(VR::eyeRight);
-    plug->getHmdPose();
+    m = plug->getHmdPose();
     
-    //for(int i=0;i<4;i++){
-        //for(int j=0;j<4;j++){
-            //printf("%f, ",m.m[i][j]);
-        //}
-        //printf("\n");
-    //}
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            printf("%f, ",m.column(i)[j]);
+        }
+        printf("\n");
+    }
     
     plug->submitVR(1,2);
     plug->shutdownVR();
