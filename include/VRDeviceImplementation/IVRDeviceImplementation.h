@@ -11,6 +11,7 @@
 //#endif
 
 #include <cstdint> //don't really want to have this here either...but w/e
+#include <VRDeviceImplementation/VRPluginTypes.h>
 
 namespace VR {
 namespace Plugin {
@@ -24,9 +25,18 @@ public:
     //I like return types
     virtual int initializeVR(void* udata = nullptr) = 0;
     virtual int submitVR(uintmax_t leftEyeTexID, uintmax_t rightEyeTexID, void* udata = nullptr) = 0;
-    virtual int update(void* udata = nullptr) = 0;
+    virtual int updateVR(void* udata = nullptr) = 0;
     virtual int shutdownVR(void* udata = nullptr) = 0;
     virtual int shouldClose() = 0;
+
+    //need to get left and right eye matrices
+    virtual mat44_t getEyeProjection(eyeId eye)=0;
+    virtual mat44_t getEyePose(eyeId eye)=0;
+    virtual mat44_t getHmdPose()=0;
+
+    //TODO: add hand pose and button states, etc...
+
+    
 
 };
 
