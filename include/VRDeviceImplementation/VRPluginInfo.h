@@ -10,8 +10,8 @@ class VRPluginInfo{
 public:
 
     //VRPluginInfo(const char* location): location(location){ };
-    VRPluginInfo() { };
-    ~VRPluginInfo() { };
+    VRPluginInfo() { }
+    ~VRPluginInfo() { }
 
     //int findSymbols();
     int loadLib(const char* loc);
