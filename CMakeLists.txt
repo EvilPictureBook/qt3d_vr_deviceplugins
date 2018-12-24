@@ -5,16 +5,13 @@ set(CMAKE_CXX_FLAGS "-std=c++11 -Ofast -march=native")
 
 find_package(Qt5 COMPONENTS Core Gui)
 
-add_library(my_plugin SHARED ./src/plugin.cpp)
-target_include_directories(my_plugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(my_plugin Qt5::Core Qt5::Gui)
-
 add_library(ivrdevice_implementation SHARED ./src/VRPluginInfo.cpp)
 target_link_libraries(ivrdevice_implementation ${CMAKE_DL_LIBS} Qt5::Core Qt5::Gui)
 target_include_directories(ivrdevice_implementation PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-#add_executable(main ./src/main.cpp)
-#target_link_libraries(main my_plugin)
+add_library(my_plugin SHARED ./examples/plugin.cpp)
+target_include_directories(my_plugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(my_plugin Qt5::Core Qt5::Gui)
 
-add_executable(naim ./src/main2.cpp)
+add_executable(naim ./examples/main2.cpp)
 target_link_libraries(naim ivrdevice_implementation ${CMAKE_DL_LIBS} Qt5::Core Qt5::Gui)
