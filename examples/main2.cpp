@@ -32,7 +32,7 @@ int main(){
     
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
-            printf("%f, ",m.column(i)[j]);
+            printf("%0.3f, ",m(i,j));
         }
         printf("\n");
     }

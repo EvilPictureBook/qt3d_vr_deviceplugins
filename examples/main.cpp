@@ -4,7 +4,7 @@
 //#include <VRDeviceImplementation/VRPluginTypes.h>
 #include <QtGui/QMatrix4x4>
 #include <QPluginLoader>
-#include <QVRDeviceImplementation/QTestImplementation.h> //interface we expect
+#include <VRDeviceImplementation/QTestImplementation.h> //interface we expect
 //#include "q_plugin.h"
 
 const char* PLUGIN_LOC = "/home/dmitri/Code/VR/qt3d_vr_deviceplugins/build/libq_plugin.so";
