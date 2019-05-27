@@ -9,6 +9,8 @@
 //#include "q_plugin.h"
 
 const char* PLUGIN_LOC = "/home/dmitri/Code/VR/qt3d_vr_deviceplugins/build/libqt_vrdevice_test.so";
+//const char* PLUGIN_LOC_2 = "/home/dmitri/Code/Qt/build-qt3d-Desktop_Qt_5_11_3_GCC_64bit-Release/examples/qt3d/openvr_plugin/libopenvr_plugin.so";
+const char* PLUGIN_LOC_2 = "/home/dmitri/Installs/Src/Qt/qt3d/examples/qt3d/openvr_plugin/libopenvr_plugin.so";
 
 //#include <iostream>
 //#include <dlfcn.h>
@@ -17,11 +19,12 @@ int main(){
 
     printf("main\n");
     
-    if(!QLibrary::isLibrary(PLUGIN_LOC)){
+    if(!QLibrary::isLibrary(PLUGIN_LOC_2)){
         printf("COULD NOT LOAD LIBRARY\n");
         return 1;
     }
-    QPluginLoader pluginLoader(PLUGIN_LOC);
+
+    QPluginLoader pluginLoader(PLUGIN_LOC_2);
     QObject *plugin = pluginLoader.instance();
 
     if(!plugin){
